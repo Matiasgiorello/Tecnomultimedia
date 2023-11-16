@@ -16,11 +16,11 @@ class Personaje {
     let nextX = this.x + dx * this.velocidad;
     let nextY = this.y + dy * this.velocidad;
 
-    // Calcula las coordenadas de la celda siguiente
+    // Calculo coordenadas celda que sigue
     let col = floor(nextX / this.objlaberinto.tamCelda);
     let fila = floor(nextY / this.objlaberinto.tamCelda);
 
-    // Verifica si la celda siguiente es un camino y no es una pared
+    // siguiente celda es camino y no pared
     if (col >= 0 && col < this.objlaberinto.columnas && fila >= 0 && fila < this.objlaberinto.filas) {
       if (this.objlaberinto.esCamino(col, fila) && !this.objlaberinto.esPared(col, fila)) {
         return true;
